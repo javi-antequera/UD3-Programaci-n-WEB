@@ -1,4 +1,5 @@
 <?php 
+//Valores de server 
 echo $_SERVER["PHP_SELF"]."<br>";
 echo $_SERVER["SERVER_SOFTWARE"]."<br>";
 echo $_SERVER["SERVER_NAME"]."<br>";
@@ -10,6 +11,16 @@ echo $_SERVER["QUERY_STRING"]."<br>";
 $pam=$_GET["dato"];
 $noPam=$_GET[""];
 */
+//Comprobación del formulario vía POST
 $name=$_POST["name"];
-echo $name;
+$surname=$_POST["surname"];
+$age=$_POST["age"];
+$city=$_POST["city"];
+echo "Nombre: ".$name."<br>";
+echo "Apellidos: ".$surname."<br>";
+echo "Edad: ".$age."<br>";
+echo "Ciudad: ".$city."<br><br>";
+
+//Valor de HTTP_REFERER (pagina desde donde se hizo la petición)
+echo $_SERVER["HTTP_USER_AGENT"];
 ?>
