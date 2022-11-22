@@ -1,12 +1,11 @@
 <?php
-
- 
-        if($_GET["resetear"]==2){
+        if($_GET["resetear"]==0){
+            //setcookie('visitas', 0, time() - 1);
             $_COOKIE["visitas"]=0;
-            $resetear=1;
-            echo file_get_contents("006contadorVisitas.php?resetear=1"); 
+            header("Status: 301 Moved Permanently");    
+            header("Location: 006contadorVisitas.php");
+            
         }
-    
 
     if(isset($_COOKIE['visitas']))
     {
@@ -17,7 +16,7 @@
     {
         setcookie('visitas',1,time()+3600*24);
         $mensaje = 'Bienvenido por primera vez a nuesta web';
-        
+            
     }
     
 ?>
@@ -31,7 +30,6 @@
 </head>
 <body>
     <h2><?php echo $mensaje;?></h2>
-    <!-- <button onclick="resetear()">RESET</button> -->
-    <a href="006contadorVisitas.php?resetear=2"> Resetear</a>
+    <a href="006contadorVisitas.php?resetear=0"> Resetear</a>
 </body>
 </html>
