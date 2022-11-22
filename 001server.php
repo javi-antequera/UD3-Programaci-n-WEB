@@ -22,5 +22,6 @@ echo "Edad: ".$age."<br>";
 echo "Ciudad: ".$city."<br><br>";
 
 //Valor de HTTP_REFERER (pagina desde donde se hizo la petición)
-echo $_SERVER["HTTP_USER_AGENT"];
+echo "Acceso desde : <br>";
+echo $_SERVER["HTTP_REFERER"];
 ?>
